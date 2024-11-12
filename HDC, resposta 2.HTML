@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomba Relógio</title>
+    <link rel="stylesheet" href="Estilo/Exploção chacabum novo hit do verão.css">
+</head>
+<script>
+    
+function bombaRelogio() {
+    var tempo = 30; 
+    var intervalo = setInterval(function() {
+        document.getElementById("contador").innerText = tempo; 
+        tempo--; 
+
+        
+        if (tempo < 0) {
+            clearInterval(intervalo); 
+            document.getElementById("contador").innerText = "EXPLOSÃO"; 
+            document.getElementById("explosao").style.display = "block"; 
+
+            var audio = document.getElementById("audioExplosao");
+            audio.play(); 
+        }
+    }, 500); 
+}
+
+
+bombaRelogio();
+
+</script>
+<body>
+
+   
+    <div id="contador">30</div>
+
+    
+    <img id="explosao" src="IMG/24fcaa5db16a774da396018f241e4daf.gif" alt="Explosão">
+
+   
+    <audio id="audioExplosao" src="AUDIO/Gwyn, Lord of Cinder - Dark Souls Soundtrack 28.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script> 
+</body>
+</html>
